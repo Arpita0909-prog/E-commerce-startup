@@ -12,4 +12,4 @@ app.use('/cart', cartRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
-});
+}); 
