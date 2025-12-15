@@ -8,11 +8,14 @@ const getProducts = (req, res) => {
 }
 
 const getProductById = (req, res) => {
-  res.send(productServices.getProductById(req.params.id));
+  productServices.getProductById(req.params.id);
+  res.sendFile(path.join(__dirname, '..', 'views', 'products.html'));
 } 
 
 const postProduct = (req, res) => {
-  res.send(productServices.addProduct());
+  const data = req.body;
+  productServices.addProduct(data);
+  res.status(201).json({ value:data.productName });
 }
 
 module.exports = {

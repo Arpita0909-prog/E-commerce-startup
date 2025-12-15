@@ -5,6 +5,7 @@ const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const cartRouter = require('./routes/cart');
 
+app.use(express.static('public'));
 app.use(express.json());
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
